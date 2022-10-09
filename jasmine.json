@@ -1,0 +1,9 @@
+{
+  "spec_dir": "dist-spec",
+  "spec_files": [
+    "**/*.spec.js",
+    "!**/entity"
+  ],
+  "stopSpecOnExpectationFailure": true,
+  "random": false
+}

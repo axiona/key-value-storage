@@ -1,0 +1,5 @@
+compiler-cache
+.npmrc
+
+# ignore the .ts files
+*.js.map
