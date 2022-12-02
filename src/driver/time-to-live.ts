@@ -1,10 +1,10 @@
 import Driver from "./driver";
-import MapCallback from "../../../object/dist/map-callback";
-import Filter from "../../../object/dist/filter";
-import Object_ from "../../../object/dist/boolean/object";
+import MapCallback from '@alirya/object/map-callback';
+import Filter from '@alirya/object/filter';
+import Object_ from '@alirya/object/boolean/object';
 import TimeToLiveType from "./time-to-live/time-to-live";
 import IsTimeToLive from "./time-to-live/boolean/time-to-live";
-import NotUndefined from "../../../undefined/dist/boolean/not-undefined";
+import NotUndefined from '@alirya/undefined/boolean/not-undefined';
 
 export type TimeToLiveCache<Type extends Record<string, any>>  = {
     [K in keyof Type] : TimeToLiveType<Type[K]>
@@ -47,30 +47,6 @@ export default class TimeToLive<Type extends Record<string, any>> implements Dri
             })
 
         });
-
-        // return this.cache.get(this.sizeKey).then((data)=>{
-        //
-        //     if(IsTimeToLive(data)) {
-        //
-        //         const {ttl, value} = data ;
-        //
-        //         if(ttl) {
-        //
-        //             const now = new Date().getTime();
-        //
-        //             if (ttl >= now) {
-        //
-        //                 return value;
-        //             }
-        //         }
-        //     }
-        //
-        //     return this.source.size.then(size=>{
-        //
-        //         return this.setCache(this.sizeKey, size as any);
-        //     })
-        //
-        // });
     }
 
     protected mergeDate<Key extends keyof Type>(value : Type[Key]) : TimeToLiveType<Type[Key]> {
@@ -94,12 +70,6 @@ export default class TimeToLive<Type extends Record<string, any>> implements Dri
 
     all(defaults:Partial<Type> = {}): Promise<Partial<Type>> {
 
-        // return this.accessCache(
-        //     this.allKey,
-        //     key => this.source.all(),
-        //     (key, value) => this.setsCache(value)
-        // );
-
         return this.cache.get(this.allKey as keyof Type).then((data: any)=>{
 
             const value = this.ensureTimeToLive(data);
@@ -118,29 +88,6 @@ export default class TimeToLive<Type extends Record<string, any>> implements Dri
 
             })
         });
-
-        // return this.cache.get(this.allKey).then(data=>{
-        //
-        //     if(data) {
-        //
-        //         const {ttl} = data;
-        //
-        //         if(ttl) {
-        //
-        //             const now = new Date().getTime();
-        //
-        //             if (ttl >= now) {
-        //
-        //                 return this.allCacheUnpack();
-        //             }
-        //         }
-        //     }
-        //
-        //     return this.source.all().then(records=>{
-        //
-        //         return this.setsCache(records);
-        //     })
-        // });
     }
 
     clear(): Promise<void> {
@@ -154,42 +101,6 @@ export default class TimeToLive<Type extends Record<string, any>> implements Dri
             this.cache.delete(key)
         ]).then(()=>undefined)
     }
-    //
-    // protected accessCache<Key extends keyof Type>(
-    //     key: Key,
-    //     sources : (key: Key) => Promise<Type[Key] | undefined>,
-    //     unpack : (key: Key, value: Type[Key]) => Promise<Type[Key] | undefined>,
-    //     destinations : (key: Key, value: Type[Key]) => Promise<Type[Key]>
-    // ): Promise<Type[Key] | undefined> {
-    //
-    //     return this.cache.get(key).then(data=>{
-    //
-    //         if(IsTimeToLive(data)) {
-    //
-    //             const {value, ttl} = data;
-    //
-    //             if(ttl) {
-    //
-    //                 const now = new Date().getTime();
-    //
-    //                 if (ttl >= now) {
-    //
-    //                     return value as Type[Key];
-    //                 }
-    //             }
-    //         }
-    //
-    //         return sources(key).then(record=>{
-    //
-    //             if(record !== undefined) {
-    //
-    //                 return destinations(key, record);
-    //             }
-    //
-    //             return record;
-    //         });
-    //     });
-    // }
 
     protected ensureTimeToLive<Value extends unknown>(data: TimeToLiveType<Value>|undefined) : TimeToLiveType<Value>|undefined {
 
@@ -232,35 +143,6 @@ export default class TimeToLive<Type extends Record<string, any>> implements Dri
                 return defaults;
             });
         });
-        //
-        // return this.cache.get(key).then(data=>{
-        //
-        //     if(IsTimeToLive(data)) {
-        //
-        //         const {value, ttl} = data;
-        //
-        //         if(ttl) {
-        //
-        //             const now = new Date().getTime();
-        //
-        //             if (ttl >= now) {
-        //
-        //                 return value;
-        //             }
-        //         }
-        //     }
-        //
-        //     return this.source.get(key).then(record=>{
-        //
-        //         if(record !== undefined) {
-        //
-        //             return this.setCache(key, record);
-        //         }
-        //
-        //         return record;
-        //     });
-        // });
-
     }
 
     has<Key extends keyof Type>(key: Key): Promise<boolean> {

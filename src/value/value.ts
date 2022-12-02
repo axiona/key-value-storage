@@ -1,5 +1,5 @@
 import Driver from "../driver/driver";
-import Undefined from "../../../undefined/dist/boolean/undefined";
+import Undefined from '@alirya/undefined/boolean/undefined';
 import Default from "@alirya/function/default";
 
 
@@ -24,9 +24,11 @@ export default class Value<
         return this.driver.set<Key>(this.key, value)
     }
 
+    get() : Promise<Type[Key]|undefined>
+    get(defaults:Type[Key]) : Promise<Type[Key]>
     get(defaults?:Type[Key]) : Promise<Type[Key]|undefined> {
 
-        return this.driver.get(this.key, defaults);
+        return this.driver.get(this.key, defaults as Type[Key]);
     }
 
     has() : Promise<boolean> {

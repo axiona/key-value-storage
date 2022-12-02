@@ -10,7 +10,7 @@ import Deletes from "./database/model/deletes";
 import Reads from "./database/model/reads";
 import Count from "./database/model/count";
 import Merge from "../string/merge";
-import Default from "../../../function/dist/default";
+import Default from '@alirya/function/default';
 
 
 export default class Database<Type extends Record<string, any>> implements Driver<Type> {

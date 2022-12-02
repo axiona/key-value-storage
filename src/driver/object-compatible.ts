@@ -3,7 +3,7 @@ import Escape from '@alirya/string/pattern/escape';
 import AddNamespace from "../string/add-namespace";
 import RemoveNamespace from "../string/remove-namespace";
 import Merge from "../string/merge";
-import Default from "../../../function/dist/default";
+import Default from '@alirya/function/default';
 
 
 export default class ObjectCompatible<Type extends Record<string, any>> implements Driver<Type> {

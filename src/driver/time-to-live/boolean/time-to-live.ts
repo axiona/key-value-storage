@@ -1,6 +1,6 @@
 import TimeToLiveType from "../time-to-live";
-import Object_ from "../../../../../object/dist/boolean/object";
-import {ExistsParameters} from "../../../../../object/dist/property/boolean/exists";
+import Object_ from '@alirya/object/boolean/object';
+import {ExistsParameters} from '@alirya/object/property/boolean/exists';
 
 export default function TimeToLive<Assumption extends unknown>(value: unknown) : value is TimeToLiveType<Assumption> {
 

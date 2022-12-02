@@ -26,7 +26,7 @@ export default class Immutable<Type extends Record<string, any>> implements Driv
 
     async get<Key extends keyof Type>(key: Key, defaults?:Type[Key]): Promise<Type[Key] | undefined> {
 
-        return this.driver.get(key, defaults);
+        return this.driver.get(key, defaults as Type[Key]);
     }
 
     async has<Key extends keyof Type>(key: Key): Promise<boolean> {
