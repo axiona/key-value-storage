@@ -1,4 +1,4 @@
-import Namespace from "./namespace";
+import Namespace from "./namespace.js";
 
 
 export default function Merge(namespace: string|ReadonlyArray<string>) : string {

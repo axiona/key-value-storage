@@ -1,9 +1,9 @@
-import Connection, {Setting} from "../../connection";
-import {DataSource} from "typeorm";
-import Driver from "../../../dist/driver/driver";
-import Database from "../../../dist/driver/database";
-import DataType from "../data-type";
-import ObjectCompatible from "../../../dist/driver/object-compatible";
+import Connection, {Setting} from "../../connection.js";
+import {DataSource} from 'typeorm';
+import Driver from "../../../dist/driver/driver.js";
+import Database from "../../../dist/driver/database.js";
+import DataType from "../data-type.js";
+import ObjectCompatible from "../../../dist/driver/object-compatible.js";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

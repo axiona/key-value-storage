@@ -1,6 +1,6 @@
-import {RemovePrefixParameters} from '@alirya/string/remove-prefix';
-import Namespace from "./namespace";
-import Merge from "./merge";
+import {RemovePrefixParameters} from '@alirya/string/remove-prefix.js';
+import Namespace from "./namespace.js";
+import Merge from "./merge.js";
 
 export default function RemoveNamespace(
     id: string,

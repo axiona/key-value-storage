@@ -3,7 +3,7 @@
     "removeComments" : false,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "module": "ES2015",
+    "module": "es2020",
     "declaration": true,
     "target": "es2016",
     "outDir": "dist-spec",

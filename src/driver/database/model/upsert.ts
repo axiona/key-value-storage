@@ -1,8 +1,8 @@
-import DbUpsert from "../database/upserts";
-import Storage from "../database/storage";
-import {EntityManager} from "typeorm";
-import AddNamespace from "../database/add-namespace";
-import RemoveNamespace from "../database/remove-namespace";
+import DbUpsert from "../database/upserts.js";
+import Storage from "../database/storage.js";
+import {EntityManager} from 'typeorm';
+import AddNamespace from "../database/add-namespace.js";
+import RemoveNamespace from "../database/remove-namespace.js";
 
 export default function Upsert<
     Type extends Storage,

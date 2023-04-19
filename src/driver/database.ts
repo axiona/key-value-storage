@@ -1,16 +1,16 @@
-import Driver from "./driver";
-import {DataSource, EntityManager} from "typeorm";
-import Upsert from "./database/model/upsert";
-import Exists from "./database/model/exists";
-import Updates from "./database/model/updates";
-import Storage from "./database/database/storage";
-import Read from "./database/model/read";
-import Delete from "./database/model/delete";
-import Deletes from "./database/model/deletes";
-import Reads from "./database/model/reads";
-import Count from "./database/model/count";
-import Merge from "../string/merge";
-import Default from '@alirya/function/default';
+import Driver from "./driver.js";
+import {DataSource, EntityManager} from 'typeorm';
+import Upsert from "./database/model/upsert.js";
+import Exists from "./database/model/exists.js";
+import Updates from "./database/model/updates.js";
+import Storage from "./database/database/storage.js";
+import Read from "./database/model/read.js";
+import Delete from "./database/model/delete.js";
+import Deletes from "./database/model/deletes.js";
+import Reads from "./database/model/reads.js";
+import Count from "./database/model/count.js";
+import Merge from "../string/merge.js";
+import Default from '@alirya/function/default.js';
 
 
 export default class Database<Type extends Record<string, any>> implements Driver<Type> {

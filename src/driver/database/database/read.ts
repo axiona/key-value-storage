@@ -1,5 +1,5 @@
-import {EntityManager, FindOneOptions} from "typeorm";
-import Storage from "./storage";
+import {EntityManager, FindOneOptions} from 'typeorm';
+import Storage from "./storage.js";
 
 export default function Read(
     manager : EntityManager,

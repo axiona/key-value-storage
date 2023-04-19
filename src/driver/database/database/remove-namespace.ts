@@ -1,6 +1,6 @@
-import Storage from "./storage";
-import {Required} from "utility-types";
-import RemoveNamespaceString from "../../../string/remove-namespace";
+import Storage from "./storage.js";
+import {Required} from 'utility-types';
+import RemoveNamespaceString from "../../../string/remove-namespace.js";
 
 export default function RemoveNamespace<Type extends Required<Storage, 'id'>>(
     setting: Type,

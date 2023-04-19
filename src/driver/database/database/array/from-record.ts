@@ -1,6 +1,6 @@
-import Storage from "../storage";
-import Class from '@alirya/class/class';
-import {Required} from "utility-types";
+import Storage from "../storage.js";
+import Class from '@alirya/class/class.js';
+import {Required} from 'utility-types';
 
 export default function FromRecord<Type extends Storage>(
     object : Record<string, any>,

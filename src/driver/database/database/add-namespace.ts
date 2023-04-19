@@ -1,6 +1,6 @@
-import Storage from "./storage";
-import {Required} from "utility-types";
-import AddNamespaceString from "../../../string/add-namespace";
+import Storage from "./storage.js";
+import {Required} from 'utility-types';
+import AddNamespaceString from "../../../string/add-namespace.js";
 
 export default function AddNamespace<Type extends Required<Storage, 'id'>>(
     setting: Type,

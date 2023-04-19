@@ -1,10 +1,10 @@
-// import Database from "../../database/database";
-// import DatabaseInsert from "../database/insert";
-// import Setting from "@aksarakan/client/setting/setting";
-import Storage from "../database/storage";
-import {EntityManager} from "typeorm";
-import Count from "../database/count";
-import AddNamespace from "../../../string/add-namespace";
+// import Database from "../../database/database.js";
+// import DatabaseInsert from "../database/insert.js";
+// import Setting from "@aksarakan/client/setting/setting.js";
+import Storage from "../database/storage.js";
+import {EntityManager} from 'typeorm';
+import Count from "../database/count.js";
+import AddNamespace from "../../../string/add-namespace.js";
 
 export default function Exists<Type extends Record<string, any>>(
     manager : EntityManager,

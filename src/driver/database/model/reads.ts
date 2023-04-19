@@ -1,10 +1,10 @@
-import {EntityManager, Like} from "typeorm";
-import ReadsNamespace from "../database/raw-reads";
-import ToRecord from "../mapper/record/to-record";
-import Storage from "../database/storage";
-import AddNamespace from "../../../string/add-namespace";
-import {Required} from "utility-types";
-import RemoveNamespace from "../database/remove-namespace";
+import {EntityManager, Like} from 'typeorm';
+import ReadsNamespace from "../database/raw-reads.js";
+import ToRecord from "../mapper/record/to-record.js";
+import Storage from "../database/storage.js";
+import AddNamespace from "../../../string/add-namespace.js";
+import {Required} from 'utility-types';
+import RemoveNamespace from "../database/remove-namespace.js";
 
 export default function Reads<Type extends Record<string, any>>(
     manager : EntityManager,

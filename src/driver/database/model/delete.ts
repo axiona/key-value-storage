@@ -1,7 +1,7 @@
-import {EntityManager} from "typeorm";
-import Storage from "../database/storage";
-import DbDelete from "../database/read";
-import AddNamespace from "../../../string/add-namespace";
+import {EntityManager} from 'typeorm';
+import Storage from "../database/storage.js";
+import DbDelete from "../database/read.js";
+import AddNamespace from "../../../string/add-namespace.js";
 
 export default function Deletes<Type>(
     manager : EntityManager,

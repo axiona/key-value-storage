@@ -1,5 +1,5 @@
-import Storage from "../../database/storage";
-import {Required} from "utility-types";
+import Storage from "../../database/storage.js";
+import {Required} from 'utility-types';
 
 export default function ToRecord<Type extends Required<Storage, 'id'|'value'>>(records: Type[]) : Record<string, any> {
 

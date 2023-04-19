@@ -1,7 +1,7 @@
-import Storage from "./storage";
-import {EntityManager} from "typeorm";
-import {Required} from "utility-types";
-import Class from '@alirya/class/class';
+import Storage from "./storage.js";
+import {EntityManager} from 'typeorm';
+import {Required} from 'utility-types';
+import Class from '@alirya/class/class.js';
 
 export default function Upserts<Type extends Required<Storage, 'id'>>(
     manager : EntityManager,

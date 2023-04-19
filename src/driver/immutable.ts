@@ -1,4 +1,4 @@
-import Driver from "./driver";
+import Driver from "./driver.js";
 
 export default class Immutable<Type extends Record<string, any>> implements Driver<Type> {
 

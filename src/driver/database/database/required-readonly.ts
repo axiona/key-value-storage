@@ -1,4 +1,4 @@
-import Price from "./required";
+import Price from "./required.js";
 
 export default interface RequiredReadonly extends Readonly<Price> {
 

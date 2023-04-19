@@ -1,7 +1,7 @@
-import Driver from "../../../dist/driver/driver";
-import DataType from "../data-type";
-import ObjectCompatible from "../../../dist/driver/object-compatible";
-import TimeToLive from "../../../dist/driver/time-to-live";
+import Driver from "../../../dist/driver/driver.js";
+import DataType from "../data-type.js";
+import ObjectCompatible from "../../../dist/driver/object-compatible.js";
+import TimeToLive from "../../../dist/driver/time-to-live.js";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

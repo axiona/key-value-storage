@@ -1,10 +1,10 @@
-import Driver from "./driver";
-import MapCallback from '@alirya/object/map-callback';
-import Filter from '@alirya/object/filter';
-import Object_ from '@alirya/object/boolean/object';
-import TimeToLiveType from "./time-to-live/time-to-live";
-import IsTimeToLive from "./time-to-live/boolean/time-to-live";
-import NotUndefined from '@alirya/undefined/boolean/not-undefined';
+import Driver from "./driver.js";
+import MapCallback from '@alirya/object/map-callback.js';
+import Filter from '@alirya/object/filter.js';
+import Object_ from '@alirya/object/boolean/object.js';
+import TimeToLiveType from "./time-to-live/time-to-live.js";
+import IsTimeToLive from "./time-to-live/boolean/time-to-live.js";
+import NotUndefined from '@alirya/undefined/boolean/not-undefined.js';
 
 export type TimeToLiveCache<Type extends Record<string, any>>  = {
     [K in keyof Type] : TimeToLiveType<Type[K]>

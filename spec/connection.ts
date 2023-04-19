@@ -1,9 +1,12 @@
 import * as Fs from 'fs';
-import Standard from '@alirya/typeorm/database/standard';
-import Config from '@alirya/typeorm/config/config';
-import Database from '@alirya/typeorm/database/database';
-import Storage from "../dist/driver/database/database/storage";
-import {Entity} from "typeorm";
+import Standard from '@alirya/typeorm/database/standard.js';
+import Config from '@alirya/typeorm/config/config.js';
+import Database from '@alirya/typeorm/database/database.js';
+import Storage from "../dist/driver/database/database/storage.js";
+import {Entity} from 'typeorm';
+import CurrentDir from '@alirya/filesystem/string/current-dir.js';
+
+const __dirname = CurrentDir(import.meta)
 
 @Entity({name:'setting'})
 export class Setting extends Storage {

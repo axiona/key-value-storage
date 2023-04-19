@@ -1,5 +1,5 @@
-import Namespace from "./namespace";
-import Merge from "./merge";
+import Namespace from "./namespace.js";
+import Merge from "./merge.js";
 
 
 export default function AddNamespace(

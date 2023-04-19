@@ -1,8 +1,8 @@
-import Storage from "./storage";
-import {EntityManager, Like} from "typeorm";
-import {Required} from "utility-types";
-import AddNamespace from "../../../string/add-namespace";
-import RemoveNamespace from "./remove-namespace";
+import Storage from "./storage.js";
+import {EntityManager, Like} from 'typeorm';
+import {Required} from 'utility-types';
+import AddNamespace from "../../../string/add-namespace.js";
+import RemoveNamespace from "./remove-namespace.js";
 
 export default function ReadsNamespace<Entity extends Required<Storage, 'id'>>(
     manager : EntityManager,

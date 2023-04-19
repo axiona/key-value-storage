@@ -1,6 +1,6 @@
-import {EntityManager} from "typeorm";
-import Storage from "./storage";
-import {FindManyOptions} from "typeorm";
+import {EntityManager} from 'typeorm';
+import Storage from "./storage.js";
+import {FindManyOptions} from 'typeorm';
 
 export default function Count(
     manager : EntityManager,

@@ -1,12 +1,12 @@
-import Number from "@alirya/number/ensure/number";
-import Boolean from "@alirya/boolean/ensure/boolean";
-import String from '@alirya/string/ensure/string';
-import RequiredReadonly from "./required-readonly";
-import Id from '@alirya/typeorm/id/id';
-import Timestamp from '@alirya/typeorm/timestamp/timestamp';
-import StrictOmit from '@alirya/object/strict-omit';
-import Setting from "./storage";
-import {NotUndefinedParameters} from '@alirya/undefined/ensure/not-undefined';
+import Number from "@alirya/number/ensure/number.js";
+import Boolean from "@alirya/boolean/ensure/boolean.js";
+import String from '@alirya/string/ensure/string.js';
+import RequiredReadonly from "./required-readonly.js";
+import Id from '@alirya/typeorm/id/id.js';
+import Timestamp from '@alirya/typeorm/timestamp/timestamp.js';
+import StrictOmit from '@alirya/object/strict-omit.js';
+import Setting from "./storage.js";
+import {NotUndefinedParameters} from '@alirya/undefined/ensure/not-undefined.js';
 
 export default class EnsuredPartial implements StrictOmit<RequiredReadonly, keyof Timestamp | keyof Id> {
 

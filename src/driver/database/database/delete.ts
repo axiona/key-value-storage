@@ -1,7 +1,7 @@
-import {EntityManager} from "typeorm";
-import Storage from "./storage";
-import {DeleteResult} from "typeorm";
-import {FindOptionsWhere} from "typeorm";
+import {EntityManager} from 'typeorm';
+import Storage from "./storage.js";
+import {DeleteResult} from 'typeorm';
+import {FindOptionsWhere} from 'typeorm';
 
 export default function Count<Type extends Storage>(
     manager : EntityManager,

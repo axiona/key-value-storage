@@ -2,7 +2,7 @@
   "compilerOptions": {
     "removeComments" : false,
     "moduleResolution": "node",
-    "module": "ES2015",
+    "module": "es2020",
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "target": "es2016",

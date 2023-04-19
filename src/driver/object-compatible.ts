@@ -1,9 +1,9 @@
-import Driver from "./driver";
-import Escape from '@alirya/string/pattern/escape';
-import AddNamespace from "../string/add-namespace";
-import RemoveNamespace from "../string/remove-namespace";
-import Merge from "../string/merge";
-import Default from '@alirya/function/default';
+import Driver from "./driver.js";
+import Escape from '@alirya/string/pattern/escape.js';
+import AddNamespace from "../string/add-namespace.js";
+import RemoveNamespace from "../string/remove-namespace.js";
+import Merge from "../string/merge.js";
+import Default from '@alirya/function/default.js';
 
 
 export default class ObjectCompatible<Type extends Record<string, any>> implements Driver<Type> {

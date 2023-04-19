@@ -1,7 +1,7 @@
-import Storage from "../database/storage";
-import DbCount from "../database/count";
-import {EntityManager, Like} from "typeorm";
-import AddNamespace from "../../../string/add-namespace";
+import Storage from "../database/storage.js";
+import DbCount from "../database/count.js";
+import {EntityManager, Like} from 'typeorm';
+import AddNamespace from "../../../string/add-namespace.js";
 
 export default function Count<Type extends Record<string, string|number|boolean>>(
     manager : EntityManager,

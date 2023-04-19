@@ -1,11 +1,11 @@
-import DbUpserts from "../database/upserts";
-import FromRecord from "../database/array/from-record";
-// import Setting from "@aksarakan/client/setting/setting";
-import Storage from "../database/storage";
-import {EntityManager} from "typeorm";
-import AddNamespace from "../database/add-namespace";
-import RemoveNamespace from "../database/remove-namespace";
-import ToRecord from "../mapper/record/to-record";
+import DbUpserts from "../database/upserts.js";
+import FromRecord from "../database/array/from-record.js";
+// import Setting from "@aksarakan/client/setting/setting.js";
+import Storage from "../database/storage.js";
+import {EntityManager} from 'typeorm';
+import AddNamespace from "../database/add-namespace.js";
+import RemoveNamespace from "../database/remove-namespace.js";
+import ToRecord from "../mapper/record/to-record.js";
 
 export default function Updates<Type extends Record<string, any>>(
     manager : EntityManager,

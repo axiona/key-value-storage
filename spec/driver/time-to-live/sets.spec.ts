@@ -1,8 +1,8 @@
-import Driver from "../../../dist/driver/driver";
-import ObjectCompatible from "../../../dist/driver/object-compatible";
-import TimeToLive, {TimeToLiveCache} from "../../../dist/driver/time-to-live";
-import MapCallback from '@alirya/object/map-callback';
-import {OmitParameters} from '@alirya/object/omit';
+import Driver from "../../../dist/driver/driver.js";
+import ObjectCompatible from "../../../dist/driver/object-compatible.js";
+import TimeToLive, {TimeToLiveCache} from "../../../dist/driver/time-to-live.js";
+import MapCallback from '@alirya/object/map-callback.js';
+import {OmitParameters} from '@alirya/object/omit.js';
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
