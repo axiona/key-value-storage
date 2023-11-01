@@ -1,5 +1,5 @@
 import Driver from "./driver.js";
-import {DataSource, EntityManager} from 'typeorm';
+import {DataSource} from 'typeorm';
 import Upsert from "./database/model/upsert.js";
 import Exists from "./database/model/exists.js";
 import Updates from "./database/model/updates.js";

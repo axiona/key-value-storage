@@ -21,18 +21,6 @@ describe('single', () => {
     const storageCache = new ObjectCompatible(cache);
     const storage = new Cache<Data>(1, storageSource, storageCache);
 
-    // let storage : Driver<typeof data>;
-    //
-    // const data : DataType = {
-    //     booleanValue: true,
-    //     stringValue: 'string 1',
-    //     numberValue: 1,
-    //     otherBooleanValue: false,
-    //     otherStringValue: 'string 2',
-    //     otherNumberValue: 2,
-    // };
-
-
     it('set', async ()=>{
 
         return storage.set('name', 'john');

@@ -1,4 +1,4 @@
-import {Column, Entity} from 'typeorm';
+import {Column} from 'typeorm';
 import String from '@alirya/typeorm/id/string.js';
 import ComposeTimestamp from '@alirya/typeorm/timestamp/compose.js';
 
