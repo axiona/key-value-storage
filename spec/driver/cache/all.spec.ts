@@ -1,5 +1,7 @@
+import Driver from "../../../dist/driver/driver.js";
+import DataType from "../data-type.js";
 import ObjectCompatible from "../../../dist/driver/object-compatible.js";
-import TimeToLive from "../../../dist/driver/time-to-live.js";
+import Cache from "../../../dist/driver/cache.js";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -17,7 +19,7 @@ describe('single', () => {
 
     const storageSource = new ObjectCompatible<Data>(source);
     const storageCache = new ObjectCompatible(cache);
-    const storage = new TimeToLive<Data>(1, storageSource, storageCache, true);
+    const storage = new Cache<Data>(1, storageSource, storageCache);
 
     it('set', async ()=>{
 
@@ -36,11 +38,11 @@ describe('single', () => {
 
         expect(await storage.get('name')).toEqual('john');
         expect(JSON.parse(source[':name'])).toBe('john');
-        expect(typeof JSON.parse(cache[':name'])).toBe('number');
+        expect(JSON.parse(cache[':name']).value).toBe('john');
 
         expect(await storage.get('address')).toEqual('street 1');
         expect(JSON.parse(source[':address'])).toBe('street 1');
-        expect(typeof JSON.parse(cache[':address'])).toBe('number');
+        expect(JSON.parse(cache[':address']).value).toBe('street 1');
 
     });
 
@@ -52,37 +54,33 @@ describe('single', () => {
         expect(JSON.parse(source[':name'])).toBe('johnny');
         expect(JSON.parse(source[':address'])).toBe('street 2');
 
-        expect(typeof JSON.parse(cache[':name'])).toBe("number");
-        expect(typeof JSON.parse(cache[':address'])).toBe("number");
+        expect(JSON.parse(cache[':name']).value).toBe('john');
+        expect(JSON.parse(cache[':address']).value).toBe('street 1');
 
         expect(await storage.all()).toEqual({
-            name: 'johnny',
-            address: 'street 2',
-        });
-
-        expect(await storageSource.all()).toEqual({
-            name: 'johnny',
-            address: 'street 2',
+            name: 'john',
+            address: 'street 1',
         });
 
     });
 
     it('wait',  (done)=>{
 
-        setTimeout(done, 2100)
+        setTimeout(done, 1000)
     });
 
     it('set source directly', async ()=>{
 
         source[':name'] = '"johnny"';
         expect(JSON.parse(source[':name'])).toBe('johnny');
-        expect(cache[':name']).toBe(undefined);
+        expect(JSON.parse(cache[':name']).value).toBe('john');
 
-        expect(source[':address']).toBe(undefined);
-        expect(cache[':address']).toBe(undefined);
+        expect(JSON.parse(source[':address'])).toBe('street 2');
+        expect(JSON.parse(cache[':address']).value).toBe('street 1');
 
         expect(await storage.all()).toEqual({
             name: 'johnny',
+            address: 'street 2',
         });
 
     });

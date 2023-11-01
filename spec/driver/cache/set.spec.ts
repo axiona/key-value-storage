@@ -1,5 +1,7 @@
+import Driver from "../../../dist/driver/driver.js";
+import DataType from "../data-type.js";
 import ObjectCompatible from "../../../dist/driver/object-compatible.js";
-import TimeToLive from "../../../dist/driver/time-to-live.js";
+import Cache from "../../../dist/driver/cache.js";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -17,7 +19,18 @@ describe('single', () => {
 
     const storageSource = new ObjectCompatible<Data>(source);
     const storageCache = new ObjectCompatible(cache);
-    const storage = new TimeToLive<Data>(1, storageSource, storageCache, true);
+    const storage = new Cache<Data>(1, storageSource, storageCache);
+
+    // let storage : Driver<typeof data>;
+    //
+    // const data : DataType = {
+    //     booleanValue: true,
+    //     stringValue: 'string 1',
+    //     numberValue: 1,
+    //     otherBooleanValue: false,
+    //     otherStringValue: 'string 2',
+    //     otherNumberValue: 2,
+    // };
 
 
     it('set', async ()=>{
@@ -28,7 +41,7 @@ describe('single', () => {
     it('read', async ()=>{
 
         expect(JSON.parse(source[':name'])).toBe('john');
-        expect(typeof JSON.parse(cache[':name'])).toBe('number');
+        expect(JSON.parse(cache[':name']).value).toBe('john');
         expect(await storage.get('name')).toBe('john');
 
     });
@@ -37,23 +50,23 @@ describe('single', () => {
 
         source[':name'] = '"johnny"';
         expect(JSON.parse(source[':name'])).toBe('johnny');
-        expect(typeof JSON.parse(cache[':name'])).toBe('number');
-        expect(await storage.get('name')).toBe('johnny');
+        expect(JSON.parse(cache[':name']).value).toBe('john');
+        expect(await storage.get('name')).toBe('john');
 
     });
 
     it('wait',  (done)=>{
 
-        setTimeout(done, 2100)
+        setTimeout(done, 1000)
     });
 
     it('set source directly', async ()=>{
 
         source[':name'] = '"johnny"';
         expect(JSON.parse(source[':name'])).toBe('johnny');
-        expect(cache[':name']).toBe(undefined);
+        expect(JSON.parse(cache[':name']).value).toBe('john');
         expect(await storage.get('name')).toBe('johnny');
-        expect(cache[':name']).toBe(undefined);
+        expect(JSON.parse(cache[':name']).value).toBe('johnny');
 
     });
 

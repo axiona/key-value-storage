@@ -1,6 +1,5 @@
-import Driver from "../../../dist/driver/driver.js";
 import ObjectCompatible from "../../../dist/driver/object-compatible.js";
-import TimeToLive, {TimeToLiveCache} from "../../../dist/driver/time-to-live.js";
+import TimeToLive from "../../../dist/driver/time-to-live.js";
 import MapCallback from '@alirya/object/map-callback.js';
 import {OmitParameters} from '@alirya/object/omit.js';
 
@@ -16,8 +15,8 @@ interface Data {
 describe('single', () => {
 
     const source = new ObjectCompatible<Data>({});
-    const cache = new ObjectCompatible<TimeToLiveCache<Data>>({});
-    const storage = new TimeToLive<Data>(1, source, cache);
+    const cache = new ObjectCompatible({});
+    const storage = new TimeToLive<Data>(1, source, cache, true);
 
     it('set', async ()=>{
 
@@ -34,17 +33,11 @@ describe('single', () => {
             address: 'street 1',
         });
 
-        expect((await cache.get('name'))?.value).toEqual('john');
-        expect((await cache.get('address'))?.value).toEqual('street 1');
+        expect(typeof (await cache.get('name'))).toEqual('number');
+        expect(typeof (await cache.get('address'))).toEqual('number');
 
         expect(await storage.get('name')).toEqual('john');
         expect(await storage.get('address')).toEqual('street 1');
-
-
-        expect(OmitParameters(MapCallback(await cache.all(), value => value?.value), '#ALL' as any)).toEqual({
-            name: 'john',
-            address: 'street 1',
-        });
 
         expect(await storage.all()).toEqual({
             name: 'john',
@@ -65,53 +58,16 @@ describe('single', () => {
             address: 'street 2',
         });
 
-        expect(OmitParameters(MapCallback(await cache.all(), value => value?.value), '#ALL' as any)).toEqual({
-            name: 'john',
-            address: 'street 1',
-        });
-
     });
 
     it('wait',  (done)=>{
 
-        setTimeout(done, 1000)
-    });
-
-    it('get value before load', async ()=>{
-
-        expect(await source.all()).toEqual({
-            name: 'johnny',
-            address: 'street 2',
-        });
-
-        expect(OmitParameters(MapCallback(await cache.all(), value => value?.value), '#ALL' as any)).toEqual({
-            name: 'john',
-            address: 'street 1',
-        });
-
-
+        setTimeout(done, 2100)
     });
 
     it('get value', async ()=>{
 
-        expect(await storage.all()).toEqual({
-            name: 'johnny',
-            address: 'street 2',
-        });
-
-        expect(OmitParameters(MapCallback(await cache.all(), value => value?.value), '#ALL' as any)).toEqual({
-            name: 'johnny',
-            address: 'street 2',
-        });
-
-    });
-
-    it('get value after load', async ()=>{
-
-        expect(OmitParameters(MapCallback(await cache.all(), value => value?.value), '#ALL' as any)).toEqual({
-            name: 'johnny',
-            address: 'street 2',
-        });
+        expect(await storage.all()).toEqual({});
 
     });
 

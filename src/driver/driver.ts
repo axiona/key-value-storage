@@ -2,6 +2,7 @@
 
 export type DriverIterable<Type extends Record<string, any>, Key extends keyof Type> = Iterable<[Key, Promise<Type[Key]>]>;
 
+// TODO MOVE MODULE TO ROOT SRC?
 export default interface Driver<Type extends Record<string, any>> /*extends AsyncIterable<[keyof Type, Type[keyof Type]]>*/ {
 
     sets<Partials extends Partial<Type>>(type: Partials) : Promise<Partials>
