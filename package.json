@@ -63,9 +63,9 @@
   "private": true,
   "scripts": {
     "install-git": "npm i @aksarakan/ocr @aksarakan/document",
-    "spec-run-js": "jasmine --config=./jasmine.json",
-    "spec-run": "jasmine --config=./jasmine.json",
-    "spec-run-debug": "jasmine --config=./jasmine-debug.json",
+    "spec-run-js": "node --enable-source-maps --trace-warnings node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
+    "spec-run": "node --enable-source-maps --trace-warnings node_modules/jasmine/bin/jasmine.js --config=./jasmine.json --color",
+    "spec-run-debug": "node --inspect --enable-source-maps --trace-warnings node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
     "spec": "npm-run-all spec-compile spec-run",
     "spec-ensure-directory": "mkdirp dist-spec",
     "spec-compile": "npm-run-all _spec-compile-script spec-cleanup",
