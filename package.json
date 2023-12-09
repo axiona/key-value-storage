@@ -1,7 +1,7 @@
 {
   "name": "@alirya/storage",
-  "version": "0.0.1",
-  "description": "aksarakan storage sdk",
+  "version": "0.1.0",
+  "description": "alirya storage sdk",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "directory": "dist"
