@@ -1,5 +1,5 @@
-import ObjectCompatible from "../../../dist/driver/object-compatible.js";
-import TimeToLive from "../../../dist/driver/time-to-live.js";
+import ObjectCompatible from "../../../dist/object-compatible.js";
+import TimeToLive from "../../../dist/time-to-live.js";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

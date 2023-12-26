@@ -1,7 +1,7 @@
-import Driver from "../../../dist/driver/driver.js";
+import Driver from "../../../dist/driver.js";
 import DataType from "../data-type.js";
-import ObjectCompatible from "../../../dist/driver/object-compatible.js";
-import Cache from "../../../dist/driver/cache.js";
+import ObjectCompatible from "../../../dist/object-compatible.js";
+import Cache from "../../../dist/cache.js";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

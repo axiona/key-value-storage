@@ -1,4 +1,4 @@
-import {RemovePrefixParameters} from '@alirya/string/remove-prefix.js';
+import {RemovePrefixParameters} from '@axiona/string/remove-prefix.js';
 import Namespace from "./namespace.js";
 import Merge from "./merge.js";
 

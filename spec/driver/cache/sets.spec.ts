@@ -1,8 +1,8 @@
-import Driver from "../../../dist/driver/driver.js";
-import ObjectCompatible from "../../../dist/driver/object-compatible.js";
-import Cache, {CacheTimeToLive} from "../../../dist/driver/cache.js";
-import MapCallback from '@alirya/object/map-callback.js';
-import {OmitParameters} from '@alirya/object/omit.js';
+import Driver from "../../../dist/driver.js";
+import ObjectCompatible from "../../../dist/object-compatible.js";
+import Cache, {CacheTimeToLive} from "../../../dist/cache.js";
+import MapCallback from '@axiona/object/map-callback.js';
+import {OmitParameters} from '@axiona/object/omit.js';
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

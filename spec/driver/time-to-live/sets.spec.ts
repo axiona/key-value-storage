@@ -1,7 +1,7 @@
-import ObjectCompatible from "../../../dist/driver/object-compatible.js";
-import TimeToLive from "../../../dist/driver/time-to-live.js";
-import MapCallback from '@alirya/object/map-callback.js';
-import {OmitParameters} from '@alirya/object/omit.js';
+import ObjectCompatible from "../../../dist/object-compatible.js";
+import TimeToLive from "../../../dist/time-to-live.js";
+import MapCallback from '@axiona/object/map-callback.js';
+import {OmitParameters} from '@axiona/object/omit.js';
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

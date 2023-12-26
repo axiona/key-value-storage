@@ -16,7 +16,7 @@
     "incremental": true,
     "rootDir": "src",
     "importHelpers": true,
-    "tsBuildInfoFile": "./dist/compiler-cache",
+    "tsBuildInfoFile": "./dist/compiler-cache.json",
     "strictPropertyInitialization": true,
     "lib": [
       "es2016",

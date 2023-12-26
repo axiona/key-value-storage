@@ -1,5 +1,4 @@
-import Driver from "../driver/driver.js";
-
+import Storage from "../storage";
 
 export default class Value<
     Type extends Record<string, any> = Record<string, any>,
@@ -7,15 +6,10 @@ export default class Value<
     > {
 
     constructor(
-        private driver: Driver<Type>,
+        private driver: Storage<Type>,
         private key : Key
     ) {
     }
-
-    // get value() : Promise<Type|null> {
-    //
-    //     return this.get()
-    // }
 
     set(value: Type[Key]) : Promise<Type[Key]> {
 
@@ -38,6 +32,4 @@ export default class Value<
 
         return this.driver.delete(this.key)
     }
-
-
 }

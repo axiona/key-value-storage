@@ -1,10 +1,10 @@
 import Connection, {Setting} from "../../connection.js";
 import {DataSource} from 'typeorm';
-import Driver from "../../../dist/driver/driver.js";
-import Database from "../../../dist/driver/database.js";
-import {NotUndefinedParameters} from '@alirya/undefined/ensure/not-undefined.js';
+import Driver from "../../../dist/driver.js";
+import Database from "../../../dist/database.js";
+import {NotUndefinedParameters} from '@axiona/undefined/ensure/not-undefined.js';
 import DataType from "../data-type.js";
-import ObjectCompatible from "../../../dist/driver/object-compatible.js";
+import ObjectCompatible from "../../../dist/object-compatible.js";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

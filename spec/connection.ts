@@ -1,10 +1,10 @@
 import * as Fs from 'fs';
-import Standard from '@alirya/typeorm/database/standard.js';
-import Config from '@alirya/typeorm/config/config.js';
-import Database from '@alirya/typeorm/database/database.js';
-import Storage from "../dist/driver/database/database/storage.js";
+import Standard from '@axiona/typeorm/database/standard.js';
+import Config from '@axiona/typeorm/config/config.js';
+import Database from '@axiona/typeorm/database/database.js';
+import Storage from "../dist/database/database/storage.js";
 import {Entity} from 'typeorm';
-import CurrentDir from '@alirya/filesystem/string/current-dir.js';
+import CurrentDir from '@axiona/filesystem/string/current-dir.js';
 
 const __dirname = CurrentDir(import.meta)
 

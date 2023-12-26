@@ -1,7 +1,7 @@
 import Connection, {Setting} from "../../connection.js";
 import {DataSource} from 'typeorm';
-import Driver from "../../../dist/driver/driver.js";
-import Database from "../../../dist/driver/database.js";
+import Driver from "../../../dist/driver.js";
+import Database from "../../../dist/database.js";
 import DataType from "../data-type.js";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
