@@ -1,7 +1,7 @@
 {
-  "name": "@axiona/storage",
+  "name": "@axiona/key-value-storage",
   "version": "0.1.0",
-  "description": "axiona storage",
+  "description": "key value storage",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "directory": "dist"
