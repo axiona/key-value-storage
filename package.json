@@ -16,8 +16,6 @@
   "license": "unlicensed",
   "repository": "git://github.com/aksarakan/setting.git",
   "dependencies": {
-    "@aksarakan/document": "^0.9.1",
-    "@aksarakan/ocr": "^0.5.1",
     "@axiona/string": "^0.17.1",
     "@axiona/array": "^0.27.1",
     "@axiona/iterable": "^0.6.1",
