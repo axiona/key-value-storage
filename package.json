@@ -9,30 +9,6 @@
   "author": {
     "name": "Andika Candra"
   },
-  "esm": {
-    "cache": false
-  },
-  "type": "module",
-  "license": "unlicensed",
-  "repository": "git://github.com/aksarakan/setting.git",
-  "dependencies": {
-    "@axiona/string": "^0.17.1",
-    "@axiona/array": "^0.27.1",
-    "@axiona/iterable": "^0.6.1",
-    "@axiona/function": "^0.17.1",
-    "@axiona/http": "^0.19.1",
-    "@axiona/object": "^0.38.1",
-    "@axiona/uri": "^0.8.2",
-    "@axiona/syslog": "^0.4.1",
-    "@axiona/prompt": "^0.1.2",
-    "@axiona/score": "^0.8.1",
-    "@axiona/value": "^0.16.1",
-    "localforage": "^1.10.0",
-    "esm": "^3.2.25",
-    "ts-toolbelt": "^9.6.0",
-    "utility-types": "^3.10.0",
-    "tslib": "^2.3.1"
-  },
   "devDependencies": {
     "@axiona/undefined": "^0.6.1",
     "@axiona/filesystem": "^0.5.1",
@@ -41,7 +17,7 @@
     "typeorm": "^0.3.10",
     "@google-cloud/storage": "^6.3.0",
     "@types/jasmine": "^3.10.2",
-    "@types/node": "12.12.59",
+    "@types/node": "^16.11.7",
     "cpy-cli": "^3.1.1",
     "jasmine": "^4.5.0",
     "jasmine-ts-console-reporter": "^3.1.1",
@@ -54,12 +30,40 @@
     "esm": "^3.2.25",
     "tslint": "^5.13.0",
     "sqlite3": "^5.1.6",
-    "typedoc": "^0.22.10",
+    "typedoc": "^0.25.4",
     "tsc-fancy": "^1.1.2",
     "package-version-git-tag": "^3.0.0",
-    "cpx2": "^4.2.0"
+    "cpx2": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "eslint-plugin-require-extensions": "^0.1.2",
+    "ts-toolbelt": "^9.6.0",
+    "utility-types": "^3.10.0",
+    "eslint": "^8.33.0"
   },
+  "esm": {
+    "cache": false
+  },
+  "license": "Apache-2.0",
   "private": true,
+  "repository": "git://github.com/aksarakan/setting.git",
+  "dependencies": {
+    "@axiona/string": "^0.17.1",
+    "@axiona/array": "^0.27.1",
+    "@axiona/iterable": "^0.6.1",
+    "@axiona/function": "^0.17.1",
+    "@axiona/http": "^0.19.1",
+    "@axiona/object": "^0.38.1",
+    "@axiona/uri": "^0.8.2",
+    "@axiona/proxy": "^0.2.2",
+    "@axiona/syslog": "^0.4.1",
+    "@axiona/prompt": "^0.1.2",
+    "@axiona/value": "^0.16.1",
+    "localforage": "^1.10.0",
+    "esm": "^3.2.25",
+    "ts-toolbelt": "^9.6.0",
+    "utility-types": "^3.10.0",
+    "tslib": "^2.5.0"
+  },
   "scripts": {
     "spec-run-js": "node --enable-source-maps --trace-warnings node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
     "spec-run": "node --enable-source-maps --trace-warnings node_modules/jasmine/bin/jasmine.js --config=./jasmine.json --color",
@@ -83,8 +87,8 @@
     "prerelease": "npm-run-all _release-remove-compile-cache compile",
     "postrelease": "npm publish ./dist",
     "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore .npmrc",
-    "lint": "tslint --project ./tslint.json",
-    "lint-fix": "tslint --project ./tslint.json --fix",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
     "doc-generate": "npm-run-all _doc-clean _doc-generate",
     "_compile-script": "tsc-fancy --preserveConsoleOutput",
     "_spec-ensure-directory": "mkdirp dist-spec",
@@ -94,11 +98,17 @@
     "_compile-ensure-directory": "mkdirp dist",
     "_doc-generate": "typedoc --entryPointStrategy expand ./src --out docs",
     "_doc-clean": "rimraf docs",
-    "_compile-asset": "cpx \"./{package.json,package-lock.json,LICENSE,Readme.md,.npmignore}\" ./dist/ --verbose",
-    "_compile-asset-watch": "cpx \"./{package.json,package-lock.json,LICENSE,README.md,.npmignore}\" ./dist/ --verbose --watch",
+    "_compile-asset": "cpx ./{package.json,package-lock.json,LICENSE,Readme.md,.npmignore} ./dist/ --verbose",
+    "_compile-asset-watch": "cpx ./{package.json,package-lock.json,LICENSE,README.md,.npmignore} ./dist/ --verbose --watch",
     "git-tag": "package-version-git-tag",
     "git-tag-push": "package-version-git-tag --push",
     "prepublishOnly": "cd ../dist",
-    "_release-remove-compile-cache": "rimraf ./dist/.compiler-cache.json"
-  }
+    "_release-remove-compile-cache": "rimraf ./dist/compiler-cache.json",
+    "lint1": "eslint .",
+    "lint1-fix": "eslint --fix .",
+    "installs": "npm i",
+    "spec-run-no-esm": "jasmine --config=./jasmine.json",
+    "_release_copy-meta-files": "cpy package.json package-lock.json LICENSE Readme.md .npmignore dist"
+  },
+  "type": "module"
 }
