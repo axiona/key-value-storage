@@ -9,6 +9,29 @@
   "author": {
     "name": "Andika Candra"
   },
+  "esm": {
+    "cache": false
+  },
+  "license": "Apache-2.0",
+  "repository": "git://github.com/aksarakan/setting.git",
+  "dependencies": {
+    "@axiona/string": "^0.18.0",
+    "@axiona/array": "^0.28.0",
+    "@axiona/iterable": "^0.7.0",
+    "@axiona/function": "^0.18.0",
+    "@axiona/http": "^0.20.0",
+    "@axiona/object": "^0.39.0",
+    "@axiona/uri": "^0.9.0",
+    "@axiona/proxy": "^0.3.0",
+    "@axiona/syslog": "^0.5.0",
+    "@axiona/prompt": "^0.2.0",
+    "@axiona/value": "^0.17.0",
+    "localforage": "^1.10.0",
+    "esm": "^3.2.25",
+    "ts-toolbelt": "^9.6.0",
+    "utility-types": "^3.10.0",
+    "tslib": "^2.5.0"
+  },
   "devDependencies": {
     "@axiona/undefined": "^0.7.0",
     "@axiona/filesystem": "^0.6.0",
@@ -40,30 +63,6 @@
     "utility-types": "^3.10.0",
     "eslint": "^8.33.0"
   },
-  "esm": {
-    "cache": false
-  },
-  "license": "Apache-2.0",
-  "private": true,
-  "repository": "git://github.com/aksarakan/setting.git",
-  "dependencies": {
-    "@axiona/string": "^0.18.0",
-    "@axiona/array": "^0.28.0",
-    "@axiona/iterable": "^0.7.0",
-    "@axiona/function": "^0.18.0",
-    "@axiona/http": "^0.20.0",
-    "@axiona/object": "^0.39.0",
-    "@axiona/uri": "^0.9.0",
-    "@axiona/proxy": "^0.3.0",
-    "@axiona/syslog": "^0.5.0",
-    "@axiona/prompt": "^0.2.0",
-    "@axiona/value": "^0.17.0",
-    "localforage": "^1.10.0",
-    "esm": "^3.2.25",
-    "ts-toolbelt": "^9.6.0",
-    "utility-types": "^3.10.0",
-    "tslib": "^2.5.0"
-  },
   "scripts": {
     "spec-run-js": "node --enable-source-maps --trace-warnings node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
     "spec-run": "node --enable-source-maps --trace-warnings node_modules/jasmine/bin/jasmine.js --config=./jasmine.json --color",
@@ -85,7 +84,6 @@
     "compile-ensure-directory": "mkdirp dist",
     "release": "npm publish ./dist",
     "prerelease": "npm-run-all _release-remove-compile-cache compile",
-    "postrelease": "npm publish ./dist",
     "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore .npmrc",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
