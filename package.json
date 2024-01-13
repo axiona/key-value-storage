@@ -3,7 +3,6 @@
   "version": "0.2.0",
   "description": "key value storage",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
     "directory": "dist"
   },
   "author": {
